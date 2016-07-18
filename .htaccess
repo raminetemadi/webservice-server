@@ -1,0 +1,36 @@
+Options +FollowSymLinks -MultiViews
+#php_flag magic_quotes_gpc Off
+
+#RedirectMatch "^/s/(.*)" "/$1"
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !\.(png|jpg|gif|css|avi|mp4|mkv|mp3|bmp|ico|swf|wav|mpg|pdf|js|otf|eot|svg|ttf|woff|woff2|tar|txt|xml|3gp|mov|cur)$
+RewriteRule ^(.*)$ index.php?params_uri=%{REQUEST_URI} [PT,L,QSA]
+
+#RewriteRule ^(.*)$ index.php
+
+#RewriteBase /
+#RewriteCond %{REQUEST_URI} ^/s/
+#RewriteRule ^s/(.*)$ $1 [R=301,L] [R=301,L]
+
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+
+
+
+
+
+
+#RedirectMatch "^params_uri" "/$1"
+
+# htaccess custom error pages
+#ErrorDocument 400 /errors/index?er=400
+#ErrorDocument 403 /errors/index?er=403
+#ErrorDocument 404 /errors/index?er=404
+#ErrorDocument 500 /errors/index?er=500
+#ErrorDocument 503 /errors/index?er=503
+#ErrorDocument 504 /errors/index?er=504
+

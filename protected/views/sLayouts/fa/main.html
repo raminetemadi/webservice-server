@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{header.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+    <body >
+		<!-- START INCLUDE PAGE -->
+		{# include contents file #}
+		{% block content %}{% include content_path %}{% endblock %}
+
+		{# include javascript files from jsfiles.html in crmLayouts folder #}
+		{% block js %}{% include jsfiles %}{% endblock %}
+		<!-- END INCLUDE PAGE -->
+    </body>
+
+</html>
